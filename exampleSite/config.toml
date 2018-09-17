@@ -4,20 +4,21 @@ title = "Material Docs"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
+themesDir = "../.."
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
 
 [params]
 	# General information
-	author = "Digitalcraftsman"
-	description = "A material design theme for documentations."
-	copyright = "Released under the MIT license"
+	author = "敖小剑"
+	description = "学习笔记."
+	copyright = "版权所有，转载请注明出处"
 
 	# Repository
 	provider = "GitHub"
-	repo_url = "https://github.com/digitalcraftsman/hugo-material-docs"
+	repo_url = "https://github.com/skyao/hugo-material-docs"
 
-	version = "1.0.0"
+	version = ""
 	logo = "images/logo.png"
 	favicon = ""
 
@@ -41,8 +42,8 @@ googleAnalytics = ""
 
 [social]
 	twitter = ""
-	github  = "digitalcraftsman"
-	email   = "hello@email.com"
+	github  = "skyao"
+	email   = "aoxiaojian@gmail.com"
 
 
 [[menu.main]]
