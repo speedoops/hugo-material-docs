@@ -1,44 +1,42 @@
-baseurl = "https://example.org/"
+baseurl = "http://localhost:1313/"
 languageCode = "en-us"
-title = "Material Docs"
+title = "学习笔记"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
-themesDir = "../.."
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
 
 [params]
 	# General information
 	author = "敖小剑"
-	description = "学习笔记."
+	description = "学习笔记"
 	copyright = "版权所有，转载请注明出处"
 
 	# Repository
 	provider = "GitHub"
 	repo_url = "https://github.com/skyao/hugo-material-docs"
-
+	
 	version = ""
 	logo = "images/logo.png"
 	favicon = ""
-
+	
 	permalink = "#"
-
+	
 	# Custom assets
 	custom_css = []
 	custom_js  = []
-
+	
 	# Syntax highlighting theme
 	highlight_css  = ""
-
+	
 	[params.palette]
-    	primary = "red"
-    	accent  = "teal"
-
-    [params.font]
-    	text = "Ubuntu"
-    	code = "Ubuntu Mono"
-
+		primary = "red"
+		accent  = "teal"
+	
+	[params.font]
+		text = "Ubuntu"
+		code = "Ubuntu Mono"
 
 [social]
 	twitter = ""
@@ -47,30 +45,21 @@ googleAnalytics = ""
 
 
 [[menu.main]]
-	name   = "Material"
+	name   = "笔记内容"
 	url    = "/"
-	weight = 0
+	weight = 1
 
 [[menu.main]]
-	name   = "Getting started"
-	url    = "getting-started/"
+	name   = "介绍"
+	identifier = "introduction"
+	url    = "introduction/"
 	weight = 10
 
 [[menu.main]]
-	name   = "Adding content"
-	url    = "adding-content/"
+	name   = "安装"
+	identifier = "installation"
+	url    = "installation/"
 	weight = 20
-
-[[menu.main]]
-	name   = "Roadmap"
-	url    = "roadmap/"
-	weight = 30
-
-[[menu.main]]
-	name   = "License"
-	url    = "license/"
-	weight = 40
-
 
 [blackfriday]
 	smartypants	= true
