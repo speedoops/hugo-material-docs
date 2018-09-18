@@ -46,7 +46,7 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 
 
 [[menu.main]]
-	name   = "笔记内容"
+	name   = "前言"
 	url    = "/"
 	weight = 1
 
@@ -54,13 +54,13 @@ googleAnalytics = "c7442f5794ea2abb71c6ff05dc0b8779"
 	name   = "介绍"
 	identifier = "introduction"
 	url    = "introduction/"
-	weight = 10
+	weight = 100
 
 [[menu.main]]
 	name   = "安装"
 	identifier = "installation"
 	url    = "installation/"
-	weight = 20
+	weight = 200
 
 [blackfriday]
 	smartypants	= true

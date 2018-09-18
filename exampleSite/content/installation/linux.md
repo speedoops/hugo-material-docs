@@ -1,7 +1,7 @@
 ---
-date: 2018-09-10T21:07:13+08:00
+date: 2018-09-11T21:07:13+08:00
 title: Linux安装
-weight: 21
+weight: 201
 menu:
   main:
     parent: "installation"
