@@ -41,15 +41,6 @@
           {{ partial "nav" . }}
         </ul>
         {{ end }}
-
-        {{ if isset .Site.Params "author" }}
-        <hr>
-        <span class="section">
-            <a href="https://skyao.io" target="_blank" title="个人博客网站">
-             作者： {{ .Site.Params.author }}
-            </a>
-        </span>       
-        {{ end }}
       </div>
     </div>
   </div>
