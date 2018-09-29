@@ -5,6 +5,7 @@
 <li>
   {{ if .HasChildren }}
     {{ partial "nav_link" $currentNode }}
+{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  .URL }}
     <ul>
       {{ range .Children }}
         {{ $.Scratch.Set "currentMenuEntry" . }}
@@ -25,6 +26,7 @@
         </li>
       {{ end }}
     </ul>
+{{ end }}
   {{ else }}
     {{ partial "nav_link" $currentNode }}
   {{ end }}
