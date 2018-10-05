@@ -5,14 +5,14 @@
 <li>
   {{ if .HasChildren }}
     {{ partial "nav_link" $currentNode }}
-{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  .URL }}
+{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  (replace .URL "/index.html" "/") }}
     <ul>
       {{ range .Children }}
         {{ $.Scratch.Set "currentMenuEntry" . }}
         <li>
           {{ if .HasChildren }}
             {{ partial "nav_link" $currentNode }}
-{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  .URL }}
+{{ if hasPrefix ( $.Permalink | relURL | printf "%s" )  (replace .URL "/index.html" "/") }}
             <ul>
               {{ range .Children }}
                 {{ $.Scratch.Set "currentMenuEntry" . }}
