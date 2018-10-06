@@ -1,5 +1,10 @@
 {{ partial "head" . }}
 
+{{ if (eq (trim .Site.Params.provider " " | lower) "github") | and (isset .Site.Params "repo_url") }}
+	{{ $repo_id := replace .Site.Params.repo_url "https://github.com/" ""}}
+	{{ .Scratch.Set "repo_id" $repo_id }}
+{{ end }}
+
 <div class="backdrop">
 	<div class="backdrop-paper"></div>
 </div>
@@ -19,20 +24,15 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Pages in {{ .Title | singularize }}</h1>
+			<h1>{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}</h1>
 
-			{{ range .Data.Pages }}
-			<a href="{{ .Permalink }}" title="{{ .Title }}">
-				<h2>{{ .Title }}</h2>
-			</a>
-
-			<br>
-			{{ printf "%s" .Summary | markdownify }}
-
-			<hr>
-			{{ end }}
+			{{ .Content }}
 
 
+
+			<footer class="footer">
+				{{ partial "footer" . }}
+			</footer>
 		</div>
 	</article>
 
