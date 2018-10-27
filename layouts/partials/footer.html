@@ -8,9 +8,14 @@
 
 {{ if .IsPage }}
 {{ if .Prev | or .Next }}
+
 {{ $previewPage := .Prev }}
-{{ if not $previewPage}}
+{{ if not $previewPage }}
     {{ $previewPage = .Site.Home }}
+{{ else }}
+    {{ if eq $previewPage.Weight 0 }}
+        {{ $previewPage = .Site.Home }}
+    {{ end }}
 {{ end }}
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
@@ -33,6 +38,7 @@
 
   <div class="next">
   {{ if .Next }}
+  {{ if gt .Next.Weight 0 }}
       <a href="{{ .Next.Permalink }}" title="{{ .Next.Title }}">
         <span class="direction">
           下一页
@@ -49,6 +55,7 @@
         </div>
       </a>
   {{ end }}
+  {{ end }}
   </div>
 </nav>
 {{ end }}
@@ -62,8 +69,9 @@
 
 {{ $firstPage := (index (.Site.Pages.ByWeight) 0) }}
 {{ range .Site.Pages.ByWeight }}
+
     {{ if not $firstPage.IsPage }}
-        {{ if .IsPage }}
+        {{ if and .IsPage (gt .Weight 0) }}
             {{ $firstPage = .}}
         {{ end }}
     {{ end }}
