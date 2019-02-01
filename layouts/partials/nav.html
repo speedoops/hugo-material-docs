@@ -1,7 +1,7 @@
 {{ $currentNode := . }}
 
-{{ $alwaysOpenLevelOne := lt (len .Site.Menus.main) 20 }}
-{{ $alwaysOpenLevelTwo := lt (len .Site.Menus.main) 10 }}
+{{ $alwaysOpenLevelOne := lt (len .Site.Menus.main) 10 }}
+{{ $alwaysOpenLevelTwo := lt (len .Site.Menus.main) 5 }}
 
 {{ range .Site.Menus.main.ByWeight }}
 {{ $.Scratch.Set "currentMenuEntry" . }}
